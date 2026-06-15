@@ -1,1 +1,5 @@
 .DS_Store
+# Xcode user settings
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
