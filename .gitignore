@@ -3,3 +3,6 @@
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
 *.xcuserstate
+# Xcode user data
+**/xcuserdata/
+BankingApp/BankingApp.xcodeproj/xcuserdata/
