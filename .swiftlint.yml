@@ -1,0 +1,28 @@
+disabled_rules:
+  - trailing_whitespace
+
+opt_in_rules:
+  - empty_count
+  - explicit_init
+  - force_unwrapping
+
+included:
+  - BankingApp
+
+excluded:
+  - Pods
+  - Carthage
+  - .build
+  - DerivedData
+
+line_length:
+  warning: 120
+  error: 150
+
+type_body_length:
+  warning: 250
+  error: 350
+
+file_length:
+  warning: 500
+  error: 700
