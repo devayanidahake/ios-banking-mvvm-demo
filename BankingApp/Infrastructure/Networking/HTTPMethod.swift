@@ -35,3 +35,33 @@ public enum HTTPMethod: String, Sendable {
 
     case options = "OPTIONS"
 }
+
+
+//Why Sendable?
+//Answer:
+//
+//Our networking layer uses Swift Concurrency.
+//
+//Objects crossing actor/task boundaries should conform to Sendable.
+//
+//This is modern Swift.
+//
+//Why String Raw Value?
+//
+//Because later
+//
+//request.httpMethod = endpoint.method.rawValue
+//
+//No switch statement required.
+//
+//Why not Struct?
+//
+//Enums guarantee only valid HTTP methods.
+//
+//Why public?
+//
+//Although it's an app target today, I want the code to be module-ready.
+//
+//If later you extract Networking into a Swift Package, no changes are required.
+//
+//This demonstrates forward-thinking architecture.
