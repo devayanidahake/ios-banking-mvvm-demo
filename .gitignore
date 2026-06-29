@@ -1,3 +1,4 @@
+
 .DS_Store
 # Xcode user settings
 *.xcworkspace/xcuserdata/
@@ -6,3 +7,6 @@
 # Xcode user data
 **/xcuserdata/
 BankingApp/BankingApp.xcodeproj/xcuserdata/
+*.github/
+
+
