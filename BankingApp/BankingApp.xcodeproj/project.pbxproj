@@ -88,6 +88,11 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		554C05232FF291510023C4B0 /* InterviewGuide */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InterviewGuide;
+			sourceTree = "<group>";
+		};
 		55805F6C2FD80C9C0025C3A2 /* BankingApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BankingApp;
@@ -136,6 +141,7 @@
 		551576322FEEC79E00A1405C /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				554C05232FF291510023C4B0 /* InterviewGuide */,
 				5515762E2FEEC79E00A1405C /* ADR */,
 				5515762F2FEEC79E00A1405C /* Architecture.md */,
 				551576302FEEC79E00A1405C /* FolderStructure.md */,
@@ -200,6 +206,7 @@
 				5515760E2FEEC2E100A1405C /* Platform */,
 				5515760F2FEEC2E700A1405C /* Resources */,
 				551576102FEEC2EF00A1405C /* SupportingFiles */,
+				554C05232FF291510023C4B0 /* InterviewGuide */,
 				55805F6C2FD80C9C0025C3A2 /* BankingApp */,
 			);
 			name = BankingApp;
