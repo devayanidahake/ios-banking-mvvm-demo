@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5515762C2FEEC66B00A1405C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762B2FEEC66B00A1405C /* README.md */; };
+		551576332FEEC79E00A1405C /* Architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762F2FEEC79E00A1405C /* Architecture.md */; };
+		551576342FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762D2FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md */; };
+		551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576312FEEC79E00A1405C /* InterviewGuide.md */; };
+		551576362FEEC79E00A1405C /* FolderStructure.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576302FEEC79E00A1405C /* FolderStructure.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		55805F782FD80C9F0025C3A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,12 +32,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5515762B2FEEC66B00A1405C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		5515762D2FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ADR-0001-CleanArchitecture.md"; sourceTree = "<group>"; };
+		5515762F2FEEC79E00A1405C /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
+		551576302FEEC79E00A1405C /* FolderStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FolderStructure.md; sourceTree = "<group>"; };
+		551576312FEEC79E00A1405C /* InterviewGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InterviewGuide.md; sourceTree = "<group>"; };
 		55805F6A2FD80C9C0025C3A2 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55805F772FD80C9F0025C3A2 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55805F812FD80C9F0025C3A2 /* BankingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		551576082FEEC2B300A1405C /* App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = App;
+			sourceTree = "<group>";
+		};
+		551576092FEEC2B600A1405C /* Composition */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Composition;
+			sourceTree = "<group>";
+		};
+		5515760A2FEEC2C100A1405C /* Features */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		5515760B2FEEC2CA00A1405C /* Domain */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5515760C2FEEC2D000A1405C /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5515760D2FEEC2D600A1405C /* Infrastructure */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5515760E2FEEC2E100A1405C /* Platform */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		5515760F2FEEC2E700A1405C /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		551576102FEEC2EF00A1405C /* SupportingFiles */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		55805F6C2FD80C9C0025C3A2 /* BankingApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BankingApp;
@@ -38,16 +96,6 @@
 		55805F7A2FD80C9F0025C3A2 /* BankingAppTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = BankingAppTests;
-			sourceTree = "<group>";
-		};
-		55805F842FD80CA00025C3A2 /* BankingAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = BankingAppUITests;
-			sourceTree = "<group>";
-		};
-		55805F9B2FD815C10025C3A2 /* Screenshots */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -77,14 +125,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5515762E2FEEC79E00A1405C /* ADR */ = {
+			isa = PBXGroup;
+			children = (
+				5515762D2FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md */,
+			);
+			path = ADR;
+			sourceTree = "<group>";
+		};
+		551576322FEEC79E00A1405C /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				5515762E2FEEC79E00A1405C /* ADR */,
+				5515762F2FEEC79E00A1405C /* Architecture.md */,
+				551576302FEEC79E00A1405C /* FolderStructure.md */,
+				551576312FEEC79E00A1405C /* InterviewGuide.md */,
+			);
+			name = Documentation;
+			path = ../Documentation;
+			sourceTree = SOURCE_ROOT;
+		};
 		55805F612FD80C9C0025C3A2 = {
 			isa = PBXGroup;
 			children = (
-				55805F9B2FD815C10025C3A2 /* Screenshots */,
+				551576082FEEC2B300A1405C /* App */,
+				551576092FEEC2B600A1405C /* Composition */,
+				5515760A2FEEC2C100A1405C /* Features */,
+				5515760B2FEEC2CA00A1405C /* Domain */,
+				5515760C2FEEC2D000A1405C /* Data */,
+				5515760D2FEEC2D600A1405C /* Infrastructure */,
+				5515760E2FEEC2E100A1405C /* Platform */,
+				5515760F2FEEC2E700A1405C /* Resources */,
+				551576102FEEC2EF00A1405C /* SupportingFiles */,
 				55805F6C2FD80C9C0025C3A2 /* BankingApp */,
 				55805F7A2FD80C9F0025C3A2 /* BankingAppTests */,
-				55805F842FD80CA00025C3A2 /* BankingAppUITests */,
 				55805F6B2FD80C9C0025C3A2 /* Products */,
+				5515762B2FEEC66B00A1405C /* README.md */,
+				551576322FEEC79E00A1405C /* Documentation */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,8 +191,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				551576082FEEC2B300A1405C /* App */,
+				551576092FEEC2B600A1405C /* Composition */,
+				5515760A2FEEC2C100A1405C /* Features */,
+				5515760B2FEEC2CA00A1405C /* Domain */,
+				5515760C2FEEC2D000A1405C /* Data */,
+				5515760D2FEEC2D600A1405C /* Infrastructure */,
+				5515760E2FEEC2E100A1405C /* Platform */,
+				5515760F2FEEC2E700A1405C /* Resources */,
+				551576102FEEC2EF00A1405C /* SupportingFiles */,
 				55805F6C2FD80C9C0025C3A2 /* BankingApp */,
-				55805F9B2FD815C10025C3A2 /* Screenshots */,
 			);
 			name = BankingApp;
 			packageProductDependencies = (
@@ -159,9 +244,6 @@
 			);
 			dependencies = (
 				55805F832FD80CA00025C3A2 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				55805F842FD80CA00025C3A2 /* BankingAppUITests */,
 			);
 			name = BankingAppUITests;
 			packageProductDependencies = (
@@ -219,6 +301,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5515762C2FEEC66B00A1405C /* README.md in Resources */,
+				551576332FEEC79E00A1405C /* Architecture.md in Resources */,
+				551576342FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md in Resources */,
+				551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */,
+				551576362FEEC79E00A1405C /* FolderStructure.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
