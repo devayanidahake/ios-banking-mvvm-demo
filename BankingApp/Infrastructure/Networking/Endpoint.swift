@@ -33,6 +33,8 @@ protocol Endpoint {
 
     /// Request timeout
     var timeoutInterval: TimeInterval { get }
+    
+    var cachePolicy: URLRequest.CachePolicy { get }
 }
 
 extension Endpoint {
@@ -51,6 +53,10 @@ extension Endpoint {
 
     var timeoutInterval: TimeInterval {
         30
+    }
+    
+    var cachePolicy: URLRequest.CachePolicy {
+        .reloadIgnoringLocalCacheData
     }
 }
 /*✅ Why Endpoint protocol?
