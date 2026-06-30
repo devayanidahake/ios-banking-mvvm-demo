@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5515762C2FEEC66B00A1405C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762B2FEEC66B00A1405C /* README.md */; };
 		551576332FEEC79E00A1405C /* Architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762F2FEEC79E00A1405C /* Architecture.md */; };
 		551576342FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762D2FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md */; };
 		551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576312FEEC79E00A1405C /* InterviewGuide.md */; };
@@ -42,6 +41,16 @@
 		55805F812FD80C9F0025C3A2 /* BankingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		554C052A2FF3E96B0023C4B0 /* Exceptions for "Infrastructure" folder in "BankingApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Networking/README.md,
+			);
+			target = 55805F692FD80C9C0025C3A2 /* BankingApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		551576082FEEC2B300A1405C /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -70,6 +79,9 @@
 		};
 		5515760D2FEEC2D600A1405C /* Infrastructure */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				554C052A2FF3E96B0023C4B0 /* Exceptions for "Infrastructure" folder in "BankingApp" target */,
+			);
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
@@ -309,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5515762C2FEEC66B00A1405C /* README.md in Resources */,
 				551576332FEEC79E00A1405C /* Architecture.md in Resources */,
 				551576342FEEC79E00A1405C /* ADR-0001-CleanArchitecture.md in Resources */,
 				551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */,
