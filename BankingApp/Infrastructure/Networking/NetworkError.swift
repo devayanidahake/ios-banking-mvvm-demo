@@ -8,7 +8,7 @@ import Foundation
 
 /// Represents all networking errors that can occur while
 /// communicating with remote services.
-enum NetworkError: LocalizedError, Sendable {
+enum NetworkError: LocalizedError, Sendable, Equatable {
 
     // MARK: Request
 
