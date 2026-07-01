@@ -7,22 +7,19 @@
 import Foundation
 @testable import BankingApp
 
-final class MockHTTPSession: HTTPSession {
+actor MockHTTPSession: HTTPSession {
 
-    // MARK: - Properties
+    private var result: Result<(Data, URLResponse), Error> =
+        .failure(NetworkError.unknown)
 
-    var result: Result<(Data, URLResponse), Error>!
+    private(set) var lastRequest: URLRequest?
 
-    private(set) var receivedRequest: URLRequest?
+    func setResult(_ result: Result<(Data, URLResponse), Error>) {
+        self.result = result
+    }
 
-    // MARK: - HTTPSession
-
-    func data(
-        for request: URLRequest
-    ) async throws -> (Data, URLResponse) {
-
-        receivedRequest = request
-
+    func data(for request: URLRequest) async throws -> (Data, URLResponse) {
+        lastRequest = request
         return try result.get()
     }
 }
@@ -67,4 +64,14 @@ final class MockHTTPSession: HTTPSession {
 
  Q4. Which design pattern?
 
- Test Double (Mock) */
+ Test Double (Mock)
+ 
+ Q5. Whenever a protocol conforms to Sendable, we'll ask:
+
+ "Should the implementation be a struct, final class, or actor?"
+
+ We'll choose the type intentionally:
+
+ struct → Immutable value objects (RequestBuilder, NetworkConfiguration)
+ final class → Reference types with managed lifecycle (URLSessionAPIClient)
+ actor → Mutable shared state accessed concurrently (MockHTTPSession in tests, future caches if needed)*/
