@@ -8,7 +8,7 @@
 import Foundation
 @testable import BankingApp
 
-struct StubEndpoint: Endpoint {
+struct TestEndpoint: Endpoint {
 
     var path: String = "/accounts"
 
