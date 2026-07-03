@@ -169,22 +169,3 @@ final class RequestBuilderTests: XCTestCase {
         )
     }
 }
-
-// MARK: - TestEndpoint
-
-private struct TestEndpoint: Endpoint {
-
-    var path: String = "/accounts"
-
-    var method: HTTPMethod = .get
-
-    var headers: [String : String] = [:]
-
-    var queryItems: [URLQueryItem] = []
-
-    var body: Data? = nil
-
-    var timeoutInterval: TimeInterval = 30
-
-    var cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalCacheData
-}

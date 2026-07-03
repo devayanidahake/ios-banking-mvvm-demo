@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import BankingApp
+/// A configurable Endpoint implementation used to create test scenarios.
 
 struct TestEndpoint: Endpoint {
 
