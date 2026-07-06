@@ -9,9 +9,11 @@ import SwiftUI
 @main
 struct BankingAppApp: App {
 
+    private let container = AppContainer()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }
