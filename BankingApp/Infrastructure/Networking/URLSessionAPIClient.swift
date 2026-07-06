@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class URLSessionAPIClient: APIClient {
+final class URLSessionAPIClient: APIClient, Sendable {
 
     private let session: HTTPSession
     private let requestBuilder: RequestBuilder

@@ -7,22 +7,29 @@
 import Foundation
 @testable import BankingApp
 
+enum MockError: Error {
+    case missingStub
+}
+
 final class MockAPIClient: APIClient {
 
     var result: Any?
-
     var error: Error?
+
+    private(set) var capturedEndpoint: (any Endpoint)?
 
     func request<T: Decodable & Sendable>(
         _ endpoint: Endpoint
     ) async throws -> T {
+
+        capturedEndpoint = endpoint
 
         if let error {
             throw error
         }
 
         guard let result = result as? T else {
-            fatalError("Mock result not configured for \(T.self)")
+            throw MockError.missingStub
         }
 
         return result

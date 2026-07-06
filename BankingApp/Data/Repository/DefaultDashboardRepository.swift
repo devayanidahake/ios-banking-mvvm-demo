@@ -6,8 +6,8 @@
 //
 import Foundation
 
-final class DefaultDashboardRepository: DashboardRepository {
-
+final class DefaultDashboardRepository: DashboardRepository, Sendable {
+    
     private let apiClient: any APIClient
 
     init(apiClient: any APIClient) {
@@ -18,9 +18,9 @@ final class DefaultDashboardRepository: DashboardRepository {
 
         let endpoint = DashboardEndpoint()
 
-        let response: [AccountDTO] = try await apiClient.request(endpoint)
+        let accountDTOs: [AccountDTO] = try await apiClient.request(endpoint)
 
-        return response.map(AccountMapper.toDomain)
+        return accountDTOs.map(AccountMapper.toDomain)
     }
 }
 /**Why DefaultDashboardRepository instead of DashboardRepositoryImpl?

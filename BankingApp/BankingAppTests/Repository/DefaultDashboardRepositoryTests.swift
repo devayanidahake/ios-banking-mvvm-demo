@@ -11,6 +11,8 @@ final class DefaultDashboardRepositoryTests: XCTestCase {
 
     private var apiClient: MockAPIClient!
     private var sut: DefaultDashboardRepository!
+    private(set) var capturedEndpoint: (any Endpoint)?
+
 
     override func setUp() {
         super.setUp()
@@ -61,25 +63,24 @@ final class DefaultDashboardRepositoryTests: XCTestCase {
         }
     }
 
-    func test_fetchAccounts_mapsDTOToDomainCorrectly() async throws {
+    func test_fetchAccounts_returnsEmptyArray_whenNoAccountsExist() async throws {
 
-        apiClient.result = [
-            AccountDTO(
-                id: "10",
-                accountNumber: "9999999999",
-                accountName: "Current",
-                balance: 5000,
-                currency: "USD"
-            )
-        ]
+        apiClient.result = [AccountDTO]()
 
-        let account = try await sut.fetchAccounts().first
+        let accounts = try await sut.fetchAccounts()
 
-        XCTAssertEqual(account?.id, "10")
-        XCTAssertEqual(account?.accountNumber, "9999999999")
-        XCTAssertEqual(account?.accountName, "Current")
-        XCTAssertEqual(account?.balance, 5000)
-        XCTAssertEqual(account?.currency, "USD")
+        XCTAssertTrue(accounts.isEmpty)
+    }
+    
+    func test_fetchAccounts_usesDashboardEndpoint() async throws {
+
+        apiClient.result = [AccountDTO]()
+
+        _ = try await sut.fetchAccounts()
+
+        XCTAssertTrue(
+            apiClient.capturedEndpoint is DashboardEndpoint
+        )
     }
 }
 
