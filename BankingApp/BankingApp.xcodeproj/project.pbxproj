@@ -10,7 +10,6 @@
 		551576332FEEC79E00A1405C /* Architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762F2FEEC79E00A1405C /* Architecture.md */; };
 		551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576312FEEC79E00A1405C /* InterviewGuide.md */; };
 		551576362FEEC79E00A1405C /* FolderStructure.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576302FEEC79E00A1405C /* FolderStructure.md */; };
-		554C05842FF51CA40023C4B0 /* BankingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C05822FF51CA40023C4B0 /* BankingAppApp.swift */; };
 		554C05852FF51CA40023C4B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C05832FF51CA40023C4B0 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		5515762F2FEEC79E00A1405C /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
 		551576302FEEC79E00A1405C /* FolderStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FolderStructure.md; sourceTree = "<group>"; };
 		551576312FEEC79E00A1405C /* InterviewGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InterviewGuide.md; sourceTree = "<group>"; };
-		554C05822FF51CA40023C4B0 /* BankingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingAppApp.swift; sourceTree = "<group>"; };
 		554C05832FF51CA40023C4B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55805F6A2FD80C9C0025C3A2 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55805F772FD80C9F0025C3A2 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +159,6 @@
 		55805F612FD80C9C0025C3A2 = {
 			isa = PBXGroup;
 			children = (
-				554C05822FF51CA40023C4B0 /* BankingAppApp.swift */,
 				554C05832FF51CA40023C4B0 /* ContentView.swift */,
 				551576082FEEC2B300A1405C /* App */,
 				551576092FEEC2B600A1405C /* Composition */,
@@ -344,7 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554C05842FF51CA40023C4B0 /* BankingAppApp.swift in Sources */,
 				554C05852FF51CA40023C4B0 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
