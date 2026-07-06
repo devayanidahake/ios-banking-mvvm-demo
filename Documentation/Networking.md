@@ -64,7 +64,7 @@ The networking layer was designed with the following goals.
 
 Every request follows the same lifecycle.
 
-```
+
 SwiftUI View
         │
         ▼
@@ -96,7 +96,7 @@ SwiftUI View
         │
         ▼
  Decoded Model
-```
+
 
 Every component performs exactly one task before passing responsibility to the next layer.
 
@@ -188,7 +188,19 @@ Responsibilities:
 - Decode response
 
 It delegates each responsibility to dedicated components.
+---
 
+## Repository Integration
+
+Repositories consume the networking layer through the `APIClient` protocol.
+
+Rather than exposing networking details to the presentation layer, repositories:
+
+- Execute API requests
+- Convert DTOs into domain models
+- Hide infrastructure details from ViewModels
+
+This keeps networking concerns isolated and allows the data source to evolve without impacting the presentation layer.
 ---
 
 ## ResponseValidator
@@ -322,6 +334,7 @@ Current test coverage includes:
 - RequestBuilder
 - ResponseValidator
 - URLSessionAPIClient
+- DashboardRepository
 
 Testing infrastructure includes:
 

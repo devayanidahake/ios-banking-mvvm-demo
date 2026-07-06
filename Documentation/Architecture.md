@@ -116,12 +116,17 @@ ViewModels never create dependencies.
 
 Responsible for:
 
-- Data access
-- Combining multiple data sources
-- Business data transformations
+- Providing domain models to the presentation layer.
+- Hiding networking and persistence details.
+- Mapping infrastructure models (DTOs) into domain models.
+- Acting as the single source of truth for business data.
 
-Repositories hide networking and persistence details.
+Repositories depend on abstractions rather than concrete networking implementations.
 
+Current implementation:
+
+- DashboardRepository
+- DefaultDashboardRepository
 ---
 
 ## APIClient
@@ -175,24 +180,25 @@ Responsible for creating consistently configured `JSONDecoder` instances.
 
 Every dependency is injected through constructors.
 
-```text
-ViewModel
-        │
-        ▼
-Repository
-        │
-        ▼
-APIClient
-        │
-        ▼
-RequestBuilder
-        │
-        ▼
-HTTPSession
-        │
-        ▼
-URLSession
-```
+            SwiftUI Views
+                  │
+                  ▼
+             ViewModels
+                  │
+                  ▼
+            Repositories
+                  │
+                  ▼
+             APIClient
+                  │
+                  ▼
+            RequestBuilder
+                  │
+                  ▼
+            HTTPSession
+                  │
+                  ▼
+            URLSession
 
 Object creation is centralized.
 
@@ -260,7 +266,7 @@ The following design patterns are used throughout the project.
 | Pattern | Implementation |
 |----------|----------------|
 | MVVM | Presentation Layer |
-| Repository | Data Layer |
+| Repository | Repository Abstraction |
 | Builder | RequestBuilder |
 | Factory | JSONDecoderFactory |
 | Dependency Injection | Constructor Injection |
@@ -333,6 +339,7 @@ Current coverage includes:
 - RequestBuilder
 - ResponseValidator
 - URLSessionAPIClient
+- DashboardRepository
 
 Testing uses:
 
@@ -350,7 +357,6 @@ The focus is on testing observable behavior rather than implementation details.
 The architecture supports future expansion including:
 
 - Authentication
-- Repository Layer
 - Offline Persistence
 - Swift Package modularization
 - Logging
@@ -389,7 +395,6 @@ These trade-offs are intentional in favor of long-term maintainability.
 The architecture will continue evolving through the following milestones:
 
 - Composition Root
-- Repository Layer
 - Authentication
 - Offline Persistence
 - Design System

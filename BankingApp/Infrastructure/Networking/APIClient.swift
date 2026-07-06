@@ -14,7 +14,7 @@ import Foundation
 /// APIClient should never expose Foundation networking
 /// types outside Infrastructure.
 /// 
-protocol APIClient {
+protocol APIClient: Sendable {
 
     func request<T: Decodable & Sendable>(
         _ endpoint: Endpoint
