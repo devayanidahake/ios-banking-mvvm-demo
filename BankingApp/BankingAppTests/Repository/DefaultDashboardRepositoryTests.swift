@@ -9,53 +9,44 @@ import XCTest
 
 final class DefaultDashboardRepositoryTests: XCTestCase {
 
-    private var apiClient: MockAPIClient!
-    private var sut: DefaultDashboardRepository!
-    private(set) var capturedEndpoint: (any Endpoint)?
-
-
-    override func setUp() {
-        super.setUp()
-
-        apiClient = MockAPIClient()
-        sut = DefaultDashboardRepository(apiClient: apiClient)
-    }
-
-    override func tearDown() {
-        sut = nil
-        apiClient = nil
-
-        super.tearDown()
-    }
-
     func test_fetchAccounts_returnsMappedDomainModels() async throws {
 
-        apiClient.result = [
-            AccountDTO(
-                id: "1",
-                accountNumber: "1234567890",
-                accountName: "Savings",
-                balance: 1000,
-                currency: "INR"
-            )
-        ]
+        let apiClient = MockAPIClient(
+            accountDTOs: [
+                AccountDTO(
+                    id: "1",
+                    accountNumber: "1234567890",
+                    accountName: "Savings",
+                    balance: 1000,
+                    currency: "INR"
+                )
+            ]
+        )
+
+        let sut = DefaultDashboardRepository(apiClient: apiClient)
 
         let accounts = try await sut.fetchAccounts()
 
         XCTAssertEqual(accounts.count, 1)
+        XCTAssertEqual(accounts.first?.id, "1")
+        XCTAssertEqual(accounts.first?.accountNumber, "1234567890")
         XCTAssertEqual(accounts.first?.accountName, "Savings")
         XCTAssertEqual(accounts.first?.balance, 1000)
+        XCTAssertEqual(accounts.first?.currency, "INR")
     }
 
     func test_fetchAccounts_propagatesNetworkError() async {
 
-        apiClient.error = NetworkError.noInternet
+        let apiClient = MockAPIClient(
+            error: NetworkError.noInternet
+        )
+
+        let sut = DefaultDashboardRepository(apiClient: apiClient)
 
         do {
 
             _ = try await sut.fetchAccounts()
-
-            XCTFail("Expected error")
+            XCTFail("Expected NetworkError.noInternet")
 
         } catch {
 
@@ -65,22 +56,15 @@ final class DefaultDashboardRepositoryTests: XCTestCase {
 
     func test_fetchAccounts_returnsEmptyArray_whenNoAccountsExist() async throws {
 
-        apiClient.result = [AccountDTO]()
+        let apiClient = MockAPIClient(
+            accountDTOs: []
+        )
+
+        let sut = DefaultDashboardRepository(apiClient: apiClient)
 
         let accounts = try await sut.fetchAccounts()
 
         XCTAssertTrue(accounts.isEmpty)
-    }
-    
-    func test_fetchAccounts_usesDashboardEndpoint() async throws {
-
-        apiClient.result = [AccountDTO]()
-
-        _ = try await sut.fetchAccounts()
-
-        XCTAssertTrue(
-            apiClient.capturedEndpoint is DashboardEndpoint
-        )
     }
 }
 

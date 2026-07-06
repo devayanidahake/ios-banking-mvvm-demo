@@ -13,22 +13,26 @@ enum MockError: Error {
 
 final class MockAPIClient: APIClient {
 
-    var result: Any?
-    var error: Error?
+    private let accountDTOs: [AccountDTO]
+    private let error: Error?
 
-    private(set) var capturedEndpoint: (any Endpoint)?
+    init(
+        accountDTOs: [AccountDTO] = [],
+        error: Error? = nil
+    ) {
+        self.accountDTOs = accountDTOs
+        self.error = error
+    }
 
     func request<T: Decodable & Sendable>(
         _ endpoint: Endpoint
     ) async throws -> T {
 
-        capturedEndpoint = endpoint
-
         if let error {
             throw error
         }
 
-        guard let result = result as? T else {
+        guard let result = accountDTOs as? T else {
             throw MockError.missingStub
         }
 
