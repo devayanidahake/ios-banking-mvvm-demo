@@ -22,3 +22,16 @@ enum AccountMapper {
     }
 }
 
+/**Why Mapper?
+ 
+ Separates transformation logic from both DTO and Domain Model.
+
+ Responsibilities:
+
+ Convert API models
+ Handle formatting
+ Handle default values
+ Convert nested structures
+ Why not extension AccountDTO?
+
+ Keeping mapping external avoids coupling DTOs to business models.*/

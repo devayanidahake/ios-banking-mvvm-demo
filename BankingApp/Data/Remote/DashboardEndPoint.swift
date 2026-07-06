@@ -36,3 +36,13 @@ struct DashboardEndpoint: Endpoint {
         .reloadIgnoringLocalCacheData
     }
 }
+
+/**Why separate Endpoint?
+ 
+ Adding a new API should require only a new Endpoint.
+
+ Networking infrastructure remains unchanged.
+
+ Why not hardcode URLRequest?
+
+ That would duplicate request-building logic.*/

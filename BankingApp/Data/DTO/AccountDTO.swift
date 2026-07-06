@@ -15,3 +15,19 @@ struct AccountDTO: Decodable, Sendable {
     let currency: String
 }
 
+/**Why DTO?
+ 
+ DTO mirrors the API response.
+
+ It should not contain business logic.
+
+ Why Decodable?
+
+ Allows automatic JSON decoding.
+
+ Why not use Account directly?
+
+ API contracts change frequently.
+
+ Keeping DTOs separate prevents backend changes from affecting the business layer.
+ */

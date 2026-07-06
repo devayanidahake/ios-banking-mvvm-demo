@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		551576332FEEC79E00A1405C /* Architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 5515762F2FEEC79E00A1405C /* Architecture.md */; };
-		551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576312FEEC79E00A1405C /* InterviewGuide.md */; };
-		551576362FEEC79E00A1405C /* FolderStructure.md in Resources */ = {isa = PBXBuildFile; fileRef = 551576302FEEC79E00A1405C /* FolderStructure.md */; };
 		554C05852FF51CA40023C4B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C05832FF51CA40023C4B0 /* ContentView.swift */; };
+		55A076F12FFBD60000BB0240 /* Testing.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076EF2FFBD60000BB0240 /* Testing.md */; };
+		55A076F22FFBD60000BB0240 /* ADR-004-TestingStrategy.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076E82FFBD60000BB0240 /* ADR-004-TestingStrategy.md */; };
+		55A076F32FFBD60000BB0240 /* ADR-003-DependencyInjection.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076E72FFBD60000BB0240 /* ADR-003-DependencyInjection.md */; };
+		55A076F42FFBD60000BB0240 /* FolderStructure.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076EC2FFBD60000BB0240 /* FolderStructure.md */; };
+		55A076F52FFBD60000BB0240 /* ADR-001-Endpoint.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076E52FFBD60000BB0240 /* ADR-001-Endpoint.md */; };
+		55A076F62FFBD60000BB0240 /* InterviewGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076ED2FFBD60000BB0240 /* InterviewGuide.md */; };
+		55A076F72FFBD60000BB0240 /* Networking.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076EE2FFBD60000BB0240 /* Networking.md */; };
+		55A076F82FFBD60000BB0240 /* Architecture.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076EB2FFBD60000BB0240 /* Architecture.md */; };
+		55A076F92FFBD60000BB0240 /* ADR-002-RequestBuilder.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076E62FFBD60000BB0240 /* ADR-002-RequestBuilder.md */; };
+		55A076FA2FFBD60000BB0240 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55A076E92FFBD60000BB0240 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +39,20 @@
 
 /* Begin PBXFileReference section */
 		5515762B2FEEC66B00A1405C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
-		5515762F2FEEC79E00A1405C /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
-		551576302FEEC79E00A1405C /* FolderStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FolderStructure.md; sourceTree = "<group>"; };
-		551576312FEEC79E00A1405C /* InterviewGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InterviewGuide.md; sourceTree = "<group>"; };
 		554C05832FF51CA40023C4B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55805F6A2FD80C9C0025C3A2 /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55805F772FD80C9F0025C3A2 /* BankingAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55805F812FD80C9F0025C3A2 /* BankingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A076E52FFBD60000BB0240 /* ADR-001-Endpoint.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ADR-001-Endpoint.md"; sourceTree = "<group>"; };
+		55A076E62FFBD60000BB0240 /* ADR-002-RequestBuilder.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ADR-002-RequestBuilder.md"; sourceTree = "<group>"; };
+		55A076E72FFBD60000BB0240 /* ADR-003-DependencyInjection.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ADR-003-DependencyInjection.md"; sourceTree = "<group>"; };
+		55A076E82FFBD60000BB0240 /* ADR-004-TestingStrategy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "ADR-004-TestingStrategy.md"; sourceTree = "<group>"; };
+		55A076E92FFBD60000BB0240 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		55A076EB2FFBD60000BB0240 /* Architecture.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Architecture.md; sourceTree = "<group>"; };
+		55A076EC2FFBD60000BB0240 /* FolderStructure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FolderStructure.md; sourceTree = "<group>"; };
+		55A076ED2FFBD60000BB0240 /* InterviewGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = InterviewGuide.md; sourceTree = "<group>"; };
+		55A076EE2FFBD60000BB0240 /* Networking.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Networking.md; sourceTree = "<group>"; };
+		55A076EF2FFBD60000BB0240 /* Testing.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Testing.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -137,25 +151,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5515762E2FEEC79E00A1405C /* ADR */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ADR;
-			sourceTree = "<group>";
-		};
-		551576322FEEC79E00A1405C /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				5515762E2FEEC79E00A1405C /* ADR */,
-				5515762F2FEEC79E00A1405C /* Architecture.md */,
-				551576302FEEC79E00A1405C /* FolderStructure.md */,
-				551576312FEEC79E00A1405C /* InterviewGuide.md */,
-			);
-			name = Documentation;
-			path = ../Documentation;
-			sourceTree = SOURCE_ROOT;
-		};
 		55805F612FD80C9C0025C3A2 = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +168,7 @@
 				55805F7A2FD80C9F0025C3A2 /* BankingAppTests */,
 				55805F6B2FD80C9C0025C3A2 /* Products */,
 				5515762B2FEEC66B00A1405C /* README.md */,
-				551576322FEEC79E00A1405C /* Documentation */,
+				55A076F02FFBD60000BB0240 /* Documentation */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +181,32 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		55A076EA2FFBD60000BB0240 /* ADR */ = {
+			isa = PBXGroup;
+			children = (
+				55A076E52FFBD60000BB0240 /* ADR-001-Endpoint.md */,
+				55A076E62FFBD60000BB0240 /* ADR-002-RequestBuilder.md */,
+				55A076E72FFBD60000BB0240 /* ADR-003-DependencyInjection.md */,
+				55A076E82FFBD60000BB0240 /* ADR-004-TestingStrategy.md */,
+				55A076E92FFBD60000BB0240 /* README.md */,
+			);
+			path = ADR;
+			sourceTree = "<group>";
+		};
+		55A076F02FFBD60000BB0240 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				55A076EA2FFBD60000BB0240 /* ADR */,
+				55A076EB2FFBD60000BB0240 /* Architecture.md */,
+				55A076EC2FFBD60000BB0240 /* FolderStructure.md */,
+				55A076ED2FFBD60000BB0240 /* InterviewGuide.md */,
+				55A076EE2FFBD60000BB0240 /* Networking.md */,
+				55A076EF2FFBD60000BB0240 /* Testing.md */,
+			);
+			name = Documentation;
+			path = ../Documentation;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -314,9 +335,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				551576332FEEC79E00A1405C /* Architecture.md in Resources */,
-				551576352FEEC79E00A1405C /* InterviewGuide.md in Resources */,
-				551576362FEEC79E00A1405C /* FolderStructure.md in Resources */,
+				55A076F12FFBD60000BB0240 /* Testing.md in Resources */,
+				55A076F22FFBD60000BB0240 /* ADR-004-TestingStrategy.md in Resources */,
+				55A076F32FFBD60000BB0240 /* ADR-003-DependencyInjection.md in Resources */,
+				55A076F42FFBD60000BB0240 /* FolderStructure.md in Resources */,
+				55A076F52FFBD60000BB0240 /* ADR-001-Endpoint.md in Resources */,
+				55A076F62FFBD60000BB0240 /* InterviewGuide.md in Resources */,
+				55A076F72FFBD60000BB0240 /* Networking.md in Resources */,
+				55A076F82FFBD60000BB0240 /* Architecture.md in Resources */,
+				55A076F92FFBD60000BB0240 /* ADR-002-RequestBuilder.md in Resources */,
+				55A076FA2FFBD60000BB0240 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

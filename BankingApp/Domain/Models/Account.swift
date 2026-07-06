@@ -14,3 +14,25 @@ struct Account: Sendable, Identifiable, Equatable {
     let balance: Decimal
     let currency: String
 }
+
+/**Why separate Domain Model from DTO?
+ 
+ Answer
+
+ The domain model represents business data used by the application.
+
+ It should remain independent of how data is received from the backend.
+
+ If the API changes, only the DTO changes while business logic remains unaffected.
+
+ Why Equatable?
+
+ For unit testing and SwiftUI state comparison.
+
+ Why Identifiable?
+
+ Allows SwiftUI lists to uniquely identify each account.
+
+ Why Sendable?
+
+ Ensures thread safety when values cross concurrency boundaries.*/
