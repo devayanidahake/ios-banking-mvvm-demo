@@ -11,7 +11,7 @@ enum DashboardState : Equatable{
     
     case loading
     
-    case loaded([Account])
+    case loaded
     
     case failure(String)
 }
