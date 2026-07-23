@@ -69,5 +69,9 @@ private extension DashboardView {
 }
 
 #Preview {
-    DashboardView(viewModel: DashboardViewModel(getAccountUseCase: PreviewGetAccountsUseCase()))
+        let container = AppContainer(useMockData: true)
+
+        DashboardView(
+            viewModel: container.makeDashboardViewModel()
+        )
 }
