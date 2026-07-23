@@ -6,32 +6,71 @@
 //
 import Foundation
 
-final class AppContainer{
-    let apiClient: any APIClient
-    
-    private lazy var dashboardRepository: any DashboardRepository = {
-        DefaultDashboardRepository(apiClient: apiClient)
-    }()
-    
-    private lazy var getAccountUseCase: any GetAccountsUseCase = {
-       DefaultGetAccountUseCase(repository: dashboardRepository)
-    }()
-    
-    init() {
+final class AppContainer {
+
+    // MARK: - Configuration
+
+    private let useMockData: Bool
+
+    // MARK: - Core
+
+    private lazy var apiClient: any APIClient = {
+
         let configuration = NetworkConfiguration.production
+
         let session = URLSession.shared
-        
-        let requestBuilder = RequestBuilder(configuration: configuration)
-        
+
+        let requestBuilder = RequestBuilder(
+            configuration: configuration
+        )
+
         let responseValidator = ResponseValidator()
-        
+
         let decoder = JSONDecoderFactory.makeDefaultDecoder()
-        
-        self.apiClient = URLSessionAPIClient(session: session, requestBuilder: requestBuilder, responseValidator: responseValidator, decoder: decoder)
+
+        return URLSessionAPIClient(
+            session: session,
+            requestBuilder: requestBuilder,
+            responseValidator: responseValidator,
+            decoder: decoder
+        )
+    }()
+
+    // MARK: - Repository
+
+    private lazy var dashboardRepository: any DashboardRepository = {
+
+        if useMockData {
+            return MockDashboardRepository()
+        }
+
+        return DefaultDashboardRepository(
+            apiClient: apiClient
+        )
+    }()
+
+    // MARK: - UseCases
+
+    private lazy var getAccountsUseCase: any GetAccountsUseCase = {
+
+        DefaultGetAccountUseCase(
+            repository: dashboardRepository
+        )
+    }()
+
+    // MARK: - Initializer
+
+    init(useMockData: Bool = true) {
+        self.useMockData = useMockData
     }
-    
-    func  makeDashboardViewModel() -> DashboardViewModel {
-        DashboardViewModel(getAccountUseCase: getAccountUseCase)
+
+    // MARK: - Factory
+
+    @MainActor
+    func makeDashboardViewModel() -> DashboardViewModel {
+
+        DashboardViewModel(
+            getAccountUseCase: getAccountsUseCase
+        )
     }
-    
 }
