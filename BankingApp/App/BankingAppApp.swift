@@ -13,7 +13,7 @@ struct BankingAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(container: container)
         }
     }
 }

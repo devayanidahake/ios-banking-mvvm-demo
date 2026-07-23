@@ -8,9 +8,13 @@ import Foundation
 
 final class AppContainer {
 
-    let apiClient: any APIClient
+    // MARK: - Configuration
 
-    init() {
+    private let useMockData: Bool
+
+    // MARK: - Core
+
+    private lazy var apiClient: any APIClient = {
 
         let configuration = NetworkConfiguration.production
 
@@ -24,11 +28,49 @@ final class AppContainer {
 
         let decoder = JSONDecoderFactory.makeDefaultDecoder()
 
-        self.apiClient = URLSessionAPIClient(
+        return URLSessionAPIClient(
             session: session,
             requestBuilder: requestBuilder,
             responseValidator: responseValidator,
             decoder: decoder
+        )
+    }()
+
+    // MARK: - Repository
+
+    private lazy var dashboardRepository: any DashboardRepository = {
+
+        if useMockData {
+            return MockDashboardRepository()
+        }
+
+        return DefaultDashboardRepository(
+            apiClient: apiClient
+        )
+    }()
+
+    // MARK: - UseCases
+
+    private lazy var getAccountsUseCase: any GetAccountsUseCase = {
+
+        DefaultGetAccountUseCase(
+            repository: dashboardRepository
+        )
+    }()
+
+    // MARK: - Initializer
+
+    init(useMockData: Bool = true) {
+        self.useMockData = useMockData
+    }
+
+    // MARK: - Factory
+
+    @MainActor
+    func makeDashboardViewModel() -> DashboardViewModel {
+
+        DashboardViewModel(
+            getAccountUseCase: getAccountsUseCase
         )
     }
 }

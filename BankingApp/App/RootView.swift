@@ -7,15 +7,12 @@
 import SwiftUI
 
 struct RootView: View {
-
+    let container: AppContainer
     var body: some View {
-        NavigationStack {
-            Text("🏦 Banking App")
-                .navigationTitle("Home")
-        }
+        DashboardView(viewModel: container.makeDashboardViewModel())
     }
 }
 
 #Preview {
-    RootView()
+    RootView(container: AppContainer())
 }
